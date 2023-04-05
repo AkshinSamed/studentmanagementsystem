@@ -1,8 +1,8 @@
-package com.sms.service.implement;
+package com.sms.studentmanagementsystem.service.implement;
 
-import com.sms.entity.Student;
-import com.sms.repository.StudentRepository;
-import com.sms.service.StudentService;
+import com.sms.studentmanagementsystem.entity.Student;
+import com.sms.studentmanagementsystem.repository.StudentRepository;
+import com.sms.studentmanagementsystem.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

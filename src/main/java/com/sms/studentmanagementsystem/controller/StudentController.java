@@ -1,6 +1,6 @@
-package com.sms.controller;
+package com.sms.studentmanagementsystem.controller;
 
-import com.sms.service.StudentService;
+import com.sms.studentmanagementsystem.service.StudentService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
