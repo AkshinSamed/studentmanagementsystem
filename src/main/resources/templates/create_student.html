@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+          <div class="...card">
+              <div class="card-body">
+                  <form th:action="@{/students}" th:object="${student}" method="post">
+                      <div class="form-group">
+                          <label>Student First Name: </label>
+                          <input type="text" name="firstName" th:field="*{firstName}" placeholder="...">
+                      </div>
+                      <div class="form-group">
+                          <label>Student Last Name: </label>
+                          <input type="text" name="lastName" th:field="*{lastName}" placeholder="...">
+                      </div>
+                      <div class="form-group">
+                          <label>Student Email: </label>
+                          <input type="text" name="email" th:field="*{email}" placeholder="...">
+                      </div>
+                      <div class="box-footer">
+                          <button type="submit" class="">SUBMIT</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+</html>
