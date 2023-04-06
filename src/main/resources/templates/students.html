@@ -8,13 +8,57 @@
 </head>
 <body>
     <a th:href="@{/students/new}" class ="text-sm font-medium text-gray-500">Add Student</a>
-    <table>
-        <tr th:each="student: ${students}">
-            <td th:text="${student.firstName}"></td>
-            <td th:text="${student.lastName}"></td>
-            <td th:text="${student.email}"></td>
-            <a th:href="@{/students/edit/{id}(id=${student.id})}">Update</a>
-        </tr>
-    </table>
+
+    <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    First Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Last Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Update
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Delete
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                th:each="student: ${students}">
+                <td class="px-6 py-4"
+                    th:text="${student.firstName}"></td>
+                <td class="px-6 py-4"
+                    th:text="${student.lastName}"></td>
+                <td class="px-6 py-4"
+                    th:text="${student.email}"></td>
+                <td class="px-6 py-4">
+                    <a th:href="@{/students/edit/{id}(id=${student.id})}">U</a>
+                </td>
+                <td class="px-6 py-4">
+                    <a th:href="@{/students/{id}(id=${student.id})}">D</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+<script>
+    const para = document.createElement("div");
+    para.className = 'flex flex-wrap gap-0.5 h-screen items-center justify-center  relative';
+    let el = '<div class = "  transition-colors duration-[1.5s] hover:duration-[0s] border-[#A4BC92] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#A4BC92]"></div>'
+    for (var k = 1; k<=1000; k++){
+        el+= '<div class = " transition-colors duration-[1.5s] hover:duration-[0s] border-[#A4BC92] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#A4BC92]"></div>';
+    };
+
+    para.innerHTML = el;
+    document.getElementById("myDIV").appendChild(para);
+</script>
 </html>

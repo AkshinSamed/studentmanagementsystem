@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class StudentServiceImplement implements StudentService {
 
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     // Autowiring with constructor
     public StudentServiceImplement(StudentRepository studentRepository){
@@ -30,6 +30,11 @@ public class StudentServiceImplement implements StudentService {
     @Override
     public Student getStudentById(Long id) {
         return studentRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
     }
 
     @Override

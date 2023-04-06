@@ -17,11 +17,6 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/index")
-    public String homePage(){
-        return "index";
-    }
-
     // Handler method for handling list students and return model-view
     @GetMapping("/students")
     public String listStudents(Model model){
@@ -58,6 +53,12 @@ public class StudentController {
         existingStudent.setEmail(student.getEmail());
 
         studentService.saveStudent(existingStudent);
+        return "redirect:/students";
+    }
+
+    @GetMapping("/students/{id}")
+    public String deleteStudent(@PathVariable Long id){
+        studentService.deleteStudent(id);
         return "redirect:/students";
     }
 }
