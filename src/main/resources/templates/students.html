@@ -8,5 +8,13 @@
 </head>
 <body>
     <a th:href="@{/students/new}" class ="text-sm font-medium text-gray-500">Add Student</a>
+    <table>
+        <tr th:each="student: ${students}">
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.email}"></td>
+            <a th:href="@{/students/edit/{id}(id=${student.id})}">Update</a>
+        </tr>
+    </table>
 </body>
 </html>
