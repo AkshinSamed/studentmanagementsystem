@@ -20,6 +20,11 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @GetMapping("/index")
+    public String homePage(){
+        return "index";
+    }
+
     // Handler method for handling list students and return model-view
     @GetMapping("/students")
     public String listStudents(Model model){
